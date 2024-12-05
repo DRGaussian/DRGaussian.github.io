@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Gaussian Splatting for High-Fidelity Dynamic Scene Reconstruction with Depth Regularization.">
+  <meta name="keywords" content="DRGaussian, NeRF, 3D Gaussian">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DRGaussian: Deformable Gaussian Splatting for High-Fidelity Dynamic Scene Reconstruction with Depth Regularization</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">DRGaussian: Deformable Gaussian Splatting for High-Fidelity Dynamic Scene Reconstruction with Depth Regularization</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://drgaussian.github.io/"> Anonymous </a><sup>
+            <span class="author-block">             
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://drgaussian.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://drgaussian.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://drgaussian.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code(release soon)</span>
+                  </a>
+              </span>
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/imgaes/method.png" alt="method" height="100%">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf"> Framework of our DRGaussian.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Dynamic scene reconstruction and real-time novel view synthesis have always been challenging tasks. The explicit representation based on Gaussian Splatting has demonstrated impressive performance on reconstruction quality and rendering efficiency. However, explicit point-based rendering suffers from geometric degradation when the input views is decreased. The motion of Gaussian primitives exacerbates the noise, further affecting the rendering quality. We propose DRGaussian, a deformable Gaussian splatting framework for dynamic scene reconstruction. We design effective deformation constraints to smooth the motion field of Gaussian splats. To mitigate degradation in scene geometry, we propose a depth regularization loss to help Gaussians learn structure details of objects based on patch-level and image-level depth supervision. We conducted experiments on multiple public datasets containing both synthetic and real scenes. Our model outperforms state-of-the-art methods, achieving better results on color and depth reconstruction for dynamic scenes.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+         
+   <!-- Comparison with Reconstruction Methods -->
+        <h3 class="title is-4">Comparison with monocular dataset</h3>
+
+        <div class="content has-text-justified">
+          <p>
+           Reconstruction comparison on the D-NeRF synthetic dataset and HyperNeRF real-world dataset using 4DGS,
+            DeformableGS, and our method.
+          </p>
+          <p class="custom-title">D-NeRF dataset</p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="100%">
+            <source src="./static/video/DNeRF_compare_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <p class="custom-title">HyperNeRF dataset</p>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="100%">
+            <source src="./static/video/hyper3d_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="100%">
+            <source src="./static/video/hyperAmericano_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+
+        <h3 class="title is-4">Comparison with real-world dataset shot by multiple cameras</h3>
+        <div class="content has-text-justified">
+          <p>
+           Reconstructed videos of 4DGS, DeformableGS, SpaceTimeGS, and our method on the Neu3D dataset.
+          </p>
+        </div>
+        <p class="custom-title">Neu3D dataset</p>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="100%">
+            <source src="./static/video/n3dcoffee_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <!--/ Comparison with Reconstruction Methods. -->
+
+         <!-- Concurrent Work. -->
+         <div class="columns is-centered">
+            <div class="column is-full-width">
+               <h2 class="title is-3">Related Links</h2>
+
+                <div class="content has-text-justified">
+                  <p>
+                    <a href="https://ingra14m.github.io/Deformable-Gaussians/">Deformable3DGS</a>: Achieves high-fidelity monocular dynamic scene reconstruction using deformable 3D Gaussian models.
+                   <p>
+                      <a href="https://fictionarry.github.io/DNGaussian/">DNGaussian</a>: Optimizes sparse-view 3D Gaussian radiance fields with global-local depth normalization for efficient 3D scene reconstruction and rendering.
+                   <p>
+                      <a href="https://guanjunwu.github.io/4dgs/index.html">4DGaussian</a>: Employs 4D Gaussian splatting with a temporal dimension for real-time rendering of dynamic scenes.
+                   <p>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+    
+              
+
+
+  </div>
+</section>
+              
+<footer class="footer">
+  <div class="container">
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+              
+
+
+</body>
+</html>
